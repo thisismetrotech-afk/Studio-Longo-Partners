@@ -1,0 +1,7 @@
+{
+  "name": "Studio Legale Longo & Partners",
+  "description": "Sito web professionale per lo Studio Legale Longo & Partners a Catania. Eccellenza legale dal 2000.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
