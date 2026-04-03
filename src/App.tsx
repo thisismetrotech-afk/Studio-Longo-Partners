@@ -176,7 +176,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-legal-gold shrink-0" />
-              <span>info@studiolegalelongo.it</span>
+              <span>giuvan59@hotmail.com; salvolongo74@hotmail.it</span>
             </li>
           </ul>
         </div>
@@ -777,7 +777,7 @@ const ContattiPage = () => {
                 </p>
                 <p className="text-slate-500 text-sm flex items-center">
                   <Mail className="w-5 h-5 text-legal-gold mr-3 shrink-0" />
-                  <span>info@studiolegalelongo.it</span>
+                  <span>giuvan59@hotmail.com; salvolongo74@hotmail.it</span>
                 </p>
               </div>
             </div>
@@ -888,7 +888,7 @@ const PrivacyPolicyPage = () => {
       <div className="space-y-10 text-slate-600 leading-relaxed">
         <section>
           <h2 className="text-xl font-serif text-legal-blue mb-4">1. Titolare del Trattamento</h2>
-          <p>Il Titolare del trattamento dei dati personali è lo Studio Legale Longo &amp; Partners, con sede in Via Francesco Fusto 12, 95128 Catania (CT), email: info@studiolegalelongo.it.</p>
+          <p>Il Titolare del trattamento dei dati personali è lo Studio Legale Longo &amp; Partners, con sede in Via Francesco Fusto 12, 95128 Catania (CT), email: giuvan59@hotmail.com; salvolongo74@hotmail.it.</p>
         </section>
 
         <section>
@@ -934,7 +934,7 @@ const PrivacyPolicyPage = () => {
             <li>Revocare il consenso in qualsiasi momento</li>
             <li>Proporre reclamo all'Autorità Garante per la Protezione dei Dati Personali (www.garanteprivacy.it)</li>
           </ul>
-          <p className="mt-4">Per esercitare tali diritti, è possibile contattare il Titolare all'indirizzo email: info@studiolegalelongo.it.</p>
+          <p className="mt-4">Per esercitare tali diritti, è possibile contattare il Titolare agli indirizzi email: giuvan59@hotmail.com; salvolongo74@hotmail.it.</p>
         </section>
 
         <section>
@@ -999,7 +999,7 @@ const CookiePolicyPage = () => {
 
         <section>
           <h2 className="text-xl font-serif text-legal-blue mb-4">6. Titolare del Trattamento</h2>
-          <p>Studio Legale Longo &amp; Partners – Via Francesco Fusto 12, 95128 Catania (CT)<br />Email: info@studiolegalelongo.it</p>
+          <p>Studio Legale Longo &amp; Partners – Via Francesco Fusto 12, 95128 Catania (CT)<br />Email: giuvan59@hotmail.com; salvolongo74@hotmail.it</p>
           <p className="mt-4">Per qualsiasi richiesta relativa ai cookie è possibile contattarci all'indirizzo email sopra indicato.</p>
         </section>
 
