@@ -801,7 +801,7 @@ const ContattiPage = () => {
             {/* Map Placeholder */}
             <div className="aspect-video w-full bg-slate-100 rounded-sm overflow-hidden relative group">
               <iframe
-                src="https://maps.google.com/maps?q=Via+Francesco+Fusco+12,+95128+Catania+CT,+Italia&output=embed"
+                src="https://maps.google.com/maps?q=37.5237964,15.0850598&output=embed"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
