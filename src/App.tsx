@@ -171,7 +171,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center space-x-3">
               <Phone className="w-5 h-5 text-legal-gold shrink-0" />
-              <span>+39 095 1234567</span>
+              <span>+39 328 6131479</span>
             </li>
             <li className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-legal-gold shrink-0" />
@@ -640,7 +640,7 @@ const ContattiPage = () => {
                 <h3 className="text-lg font-serif text-legal-blue border-b border-slate-200 pb-2">Recapiti</h3>
                 <p className="text-slate-500 text-sm flex items-center mb-2">
                   <Phone className="w-5 h-5 text-legal-gold mr-3 shrink-0" />
-                  <span>+39 095 1234567</span>
+                  <span>+39 328 6131479</span>
                 </p>
                 <p className="text-slate-500 text-sm flex items-center">
                   <Mail className="w-5 h-5 text-legal-gold mr-3 shrink-0" />
