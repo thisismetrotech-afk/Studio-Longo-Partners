@@ -454,7 +454,7 @@ const StudioPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
               <p>
-                Fondato nel 2000, lo Studio Legale Longo & Partners si è affermato come una delle realtà forensi più autorevoli di Catania. La nostra storia è caratterizzata da una crescita costante, alimentata dalla fiducia dei nostri clienti e dai successi ottenuti in ambito giudiziale e stragiudiziale.
+                Fondato nel 2000, lo Studio Legale Longo & Partners assiste privati e imprese con rigore, continuità e concretezza. In oltre vent'anni di attività, abbiamo seguito centinaia di pratiche — dal contenzioso civile alle operazioni societarie — costruendo relazioni durature fondate sulla fiducia e sui risultati.
               </p>
               <p>
                 La nostra filosofia si fonda su tre pilastri fondamentali: <strong>Professionalità</strong>, <strong>Etica</strong> e <strong>Attenzione al Cliente</strong>. Crediamo che l'eccellenza legale non possa prescindere da un rapporto umano basato sulla fiducia reciproca e sulla trasparenza.
@@ -472,11 +472,10 @@ const StudioPage = () => {
         </motion.div>
 
         <div className="aspect-video w-full mb-24 rounded-sm overflow-hidden shadow-2xl">
-          <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2069" 
-            alt="Office Interior" 
+          <img
+            src="/studio.png"
+            alt="Studio Legale Longo & Partners"
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
         </div>
 
