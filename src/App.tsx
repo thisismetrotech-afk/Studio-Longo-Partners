@@ -20,7 +20,6 @@ const Navbar = () => {
   const navLinks = [
     { id: 'home', label: 'Home' },
     { id: 'studio', label: 'Lo Studio' },
-    { id: 'avvocati', label: 'Avvocati' },
     { id: 'attivita', label: 'Aree di Attività' },
     { id: 'contatti', label: 'Contatti' },
   ];
@@ -147,7 +146,6 @@ const Footer = () => {
           <ul className="space-y-4 text-sm text-slate-400">
             <li><button onClick={() => navigateTo('home')} className="hover:text-white transition-colors">Home</button></li>
             <li><button onClick={() => navigateTo('studio')} className="hover:text-white transition-colors">Lo Studio</button></li>
-            <li><button onClick={() => navigateTo('avvocati')} className="hover:text-white transition-colors">Avvocati</button></li>
             <li><button onClick={() => navigateTo('attivita')} className="hover:text-white transition-colors">Aree di Attività</button></li>
             <li><button onClick={() => navigateTo('contatti')} className="hover:text-white transition-colors">Contatti</button></li>
           </ul>
@@ -390,17 +388,9 @@ const HomePage = () => {
       {/* Lawyers Preview */}
       <section className="section-padding bg-legal-blue text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div className="max-w-2xl">
-              <span className="text-legal-gold uppercase tracking-widest text-xs font-bold mb-4 block">Il Team</span>
-              <h2 className="text-3xl md:text-5xl font-serif">I Nostri Professionisti</h2>
-            </div>
-            <button 
-              onClick={() => navigateTo('avvocati')}
-              className="text-sm uppercase tracking-widest font-bold border-b border-legal-gold pb-1 hover:text-legal-gold transition-colors"
-            >
-              Vedi Tutti
-            </button>
+          <div className="mb-16">
+            <span className="text-legal-gold uppercase tracking-widest text-xs font-bold mb-4 block">Il Team</span>
+            <h2 className="text-3xl md:text-5xl font-serif">I Nostri Professionisti</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -411,8 +401,6 @@ const HomePage = () => {
               <motion.div
                 key={idx}
                 whileHover={{ y: -10 }}
-                className="group cursor-pointer"
-                onClick={() => navigateTo('avvocati')}
               >
                 <h3 className="text-2xl font-serif mb-2">{lawyer.name}</h3>
                 <p className="text-legal-gold text-sm uppercase tracking-widest font-bold">{lawyer.role}</p>
@@ -496,139 +484,6 @@ const StudioPage = () => {
   );
 };
 
-const AvvocatiPage = () => {
-  return (
-    <div className="pt-32 pb-20">
-      <section className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
-        <div className="mb-20">
-          <span className="text-legal-gold uppercase tracking-widest text-xs font-bold mb-4 block">Il Team</span>
-          <h1 className="text-4xl md:text-6xl font-serif text-legal-blue mb-6">I Nostri Professionisti</h1>
-          <p className="text-slate-500 text-xl max-w-2xl">Un team di esperti legali pronti a mettere la propria competenza al vostro servizio.</p>
-        </div>
-
-        <div className="space-y-32">
-          {/* Giovanni Longo */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="sticky top-32"
-            >
-              <div className="aspect-[3/4] rounded-sm overflow-hidden shadow-2xl mb-8">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Avv. Giovanni Longo" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <h2 className="text-3xl font-serif text-legal-blue mb-2">Avv. Giovanni Longo</h2>
-              <p className="text-legal-gold uppercase tracking-widest font-bold text-sm">Fondatore & Senior Partner</p>
-            </motion.div>
-            
-            <div className="space-y-12">
-              <section>
-                <h3 className="text-xl font-serif text-legal-blue mb-4 border-b border-slate-200 pb-2">Biografia</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  L'Avv. Giovanni Longo vanta un'esperienza ultraventennale nel campo del diritto civile e societario. Fondatore dello studio nel 2000, ha dedicato la sua carriera alla tutela di imprese e privati, diventando un punto di riferimento nel panorama legale siciliano. La sua profonda conoscenza della materia e la sua capacità analitica gli permettono di affrontare anche i contenziosi più complessi con estrema efficacia.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-xl font-serif text-legal-blue mb-4 border-b border-slate-200 pb-2">Formazione e Specializzazioni</h3>
-                <ul className="space-y-3 text-slate-600">
-                  <li className="flex items-start">
-                    <ChevronRight className="w-4 h-4 text-legal-gold mt-1 shrink-0 mr-2" />
-                    <span>Laurea in Giurisprudenza con lode presso l'Università degli Studi di Catania.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ChevronRight className="w-4 h-4 text-legal-gold mt-1 shrink-0 mr-2" />
-                    <span>Master in Diritto Societario e Governance d'Impresa.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ChevronRight className="w-4 h-4 text-legal-gold mt-1 shrink-0 mr-2" />
-                    <span>Iscritto all'Albo degli Avvocati di Catania dal 1998.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ChevronRight className="w-4 h-4 text-legal-gold mt-1 shrink-0 mr-2" />
-                    <span>Abilitato al patrocinio dinanzi alle Magistrature Superiori.</span>
-                  </li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-xl font-serif text-legal-blue mb-4 border-b border-slate-200 pb-2">Aree di Competenza</h3>
-                <div className="flex flex-wrap gap-3">
-                  {['Diritto Civile', 'Diritto Societario', 'Contrattualistica', 'Contenzioso Agrario', 'Successioni'].map((tag, i) => (
-                    <span key={i} className="px-4 py-2 bg-slate-100 text-slate-700 text-xs uppercase tracking-widest font-bold">{tag}</span>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </div>
-
-          {/* Salvo Longo */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="lg:order-2 sticky top-32"
-            >
-              <div className="aspect-[3/4] rounded-sm overflow-hidden shadow-2xl mb-8">
-                <img 
-                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Avv. Salvo Longo" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <h2 className="text-3xl font-serif text-legal-blue mb-2">Avv. Salvo Longo</h2>
-              <p className="text-legal-gold uppercase tracking-widest font-bold text-sm">Partner</p>
-            </motion.div>
-            
-            <div className="lg:order-1 space-y-12">
-              <section>
-                <h3 className="text-xl font-serif text-legal-blue mb-4 border-b border-slate-200 pb-2">Biografia</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  L'Avv. Salvo Longo si occupa prevalentemente di diritto commerciale, assicurativo e infortunistica. Con un approccio dinamico e orientato alla risoluzione pratica dei problemi, assiste i clienti sia nella fase di consulenza preventiva che in quella del contenzioso. La sua attenzione ai dettagli e la costante ricerca dell'aggiornamento normativo lo rendono un professionista affidabile e preparato.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-xl font-serif text-legal-blue mb-4 border-b border-slate-200 pb-2">Formazione</h3>
-                <ul className="space-y-3 text-slate-600">
-                  <li className="flex items-start">
-                    <ChevronRight className="w-4 h-4 text-legal-gold mt-1 shrink-0 mr-2" />
-                    <span>Laurea in Giurisprudenza presso l'Università degli Studi di Catania.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ChevronRight className="w-4 h-4 text-legal-gold mt-1 shrink-0 mr-2" />
-                    <span>Specializzazione in Diritto delle Assicurazioni.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ChevronRight className="w-4 h-4 text-legal-gold mt-1 shrink-0 mr-2" />
-                    <span>Iscritto all'Albo degli Avvocati di Catania.</span>
-                  </li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-xl font-serif text-legal-blue mb-4 border-b border-slate-200 pb-2">Competenze Principali</h3>
-                <div className="flex flex-wrap gap-3">
-                  {['Infortunistica Stradale', 'Diritto Commerciale', 'Recupero Crediti', 'Responsabilità Professionale', 'Diritto del Lavoro'].map((tag, i) => (
-                    <span key={i} className="px-4 py-2 bg-slate-100 text-slate-700 text-xs uppercase tracking-widest font-bold">{tag}</span>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
 
 const AttivitaPage = () => {
   const areas = [
@@ -1042,7 +897,6 @@ function AppContent() {
           >
             {currentPage === 'home' && <HomePage />}
             {currentPage === 'studio' && <StudioPage />}
-            {currentPage === 'avvocati' && <AvvocatiPage />}
             {currentPage === 'attivita' && <AttivitaPage />}
             {currentPage === 'contatti' && <ContattiPage />}
             {currentPage === 'privacy' && <PrivacyPolicyPage />}
