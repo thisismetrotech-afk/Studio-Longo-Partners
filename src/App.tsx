@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Phone, Mail, MapPin, ChevronRight, Scale, ShieldCheck, Award, Clock, Facebook, Linkedin } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { useNavigation, NavigationProvider } from './NavigationContext';
 
 // --- Components ---
@@ -731,13 +732,21 @@ const AttivitaPage = () => {
   );
 };
 
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
 const ContattiPage = () => {
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formRef.current) return;
     setFormStatus('submitting');
-    setTimeout(() => setFormStatus('success'), 1500);
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, EMAILJS_PUBLIC_KEY)
+      .then(() => setFormStatus('success'))
+      .catch(() => setFormStatus('error'));
   };
 
   return (
@@ -791,8 +800,8 @@ const ContattiPage = () => {
 
             {/* Map Placeholder */}
             <div className="aspect-video w-full bg-slate-100 rounded-sm overflow-hidden relative group">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.843615165979!2d15.0863!3d37.5135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313e2d63630f9d9%3A0x6d0a7a0a0a0a0a0a!2sVia%20Francesco%20Fusto%2C%2012%2C%2095128%20Catania%20CT!5e0!3m2!1sit!2sit!4v1620000000000!5m2!1sit!2sit" 
+              <iframe
+                src="https://maps.google.com/maps?q=Via+Francesco+Fusco+12,+95128+Catania+CT,+Italia&output=embed"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -828,24 +837,24 @@ const ContattiPage = () => {
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs uppercase tracking-widest font-bold text-slate-500">Nome e Cognome</label>
-                    <input required type="text" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:border-legal-gold transition-colors" />
+                    <input required type="text" name="from_name" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:border-legal-gold transition-colors" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs uppercase tracking-widest font-bold text-slate-500">Email</label>
-                    <input required type="email" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:border-legal-gold transition-colors" />
+                    <input required type="email" name="reply_to" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:border-legal-gold transition-colors" />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs uppercase tracking-widest font-bold text-slate-500">Telefono</label>
-                  <input type="tel" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:border-legal-gold transition-colors" />
+                  <input type="tel" name="phone" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:border-legal-gold transition-colors" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs uppercase tracking-widest font-bold text-slate-500">Messaggio</label>
-                  <textarea required rows={5} className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:border-legal-gold transition-colors resize-none"></textarea>
+                  <textarea required rows={5} name="message" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:border-legal-gold transition-colors resize-none"></textarea>
                 </div>
                 <div className="flex items-start space-x-3 mb-6">
                   <input required type="checkbox" className="mt-1" id="privacy" />
@@ -853,9 +862,12 @@ const ContattiPage = () => {
                     Dichiaro di aver letto l'informativa sulla privacy e acconsento al trattamento dei miei dati personali per le finalità indicate.
                   </label>
                 </div>
-                <button 
+                {formStatus === 'error' && (
+                  <p className="text-red-500 text-sm">Errore durante l'invio. Riprova o contattaci direttamente via email.</p>
+                )}
+                <button
                   disabled={formStatus === 'submitting'}
-                  type="submit" 
+                  type="submit"
                   className="w-full bg-legal-blue text-white py-4 text-sm uppercase tracking-widest font-bold hover:bg-slate-800 transition-all disabled:opacity-50"
                 >
                   {formStatus === 'submitting' ? 'Invio in corso...' : 'Invia Messaggio'}
