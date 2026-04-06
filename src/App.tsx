@@ -404,24 +404,15 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
-              { name: 'Avv. Giovanni Longo', role: 'Fondatore & Senior Partner', img: '/foto 1.webp' },
-              { name: 'Avv. Salvo Longo', role: 'Partner', img: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1000' },
+              { name: 'Avv. Giovanni Longo', role: 'Fondatore & Senior Partner' },
+              { name: 'Avv. Salvo Longo', role: 'Fondatore & Senior Partner' },
             ].map((lawyer, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 whileHover={{ y: -10 }}
                 className="group cursor-pointer"
                 onClick={() => navigateTo('avvocati')}
               >
-                <div className="aspect-[3/4] overflow-hidden mb-6 relative">
-                  <img 
-                    src={lawyer.img} 
-                    alt={lawyer.name} 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-legal-blue/20 group-hover:bg-transparent transition-colors" />
-                </div>
                 <h3 className="text-2xl font-serif mb-2">{lawyer.name}</h3>
                 <p className="text-legal-gold text-sm uppercase tracking-widest font-bold">{lawyer.role}</p>
               </motion.div>
