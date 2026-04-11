@@ -167,11 +167,15 @@ const Footer = () => {
           <ul className="space-y-4 text-sm text-slate-400">
             <li className="flex items-start space-x-3">
               <MapPin className="w-5 h-5 text-legal-gold shrink-0" />
-              <span>Via Francesco Fusto 12,<br />95128 Catania (CT)</span>
+              <span>Via Francesco Fusco 12,<br />95128 Catania (CT)</span>
             </li>
             <li className="flex items-center space-x-3">
               <Phone className="w-5 h-5 text-legal-gold shrink-0" />
               <span>+39 328 6131479</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <Phone className="w-5 h-5 text-legal-gold shrink-0" />
+              <span>+39 095 0950372 (Tel/Fax)</span>
             </li>
             <li className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-legal-gold shrink-0" />
