@@ -633,7 +633,7 @@ const ContattiPage = () => {
                 <h3 className="text-lg font-serif text-legal-blue border-b border-slate-200 pb-2">Sede di Catania</h3>
                 <p className="text-slate-500 text-sm leading-relaxed flex items-start">
                   <MapPin className="w-5 h-5 text-legal-gold mr-3 shrink-0" />
-                  <span>Via Francesco Fusto 12,<br />95128 Catania (CT)</span>
+                  <span>Via Francesco Fusco 12,<br />95128 Catania (CT)</span>
                 </p>
               </div>
               <div className="space-y-4">
@@ -641,6 +641,10 @@ const ContattiPage = () => {
                 <p className="text-slate-500 text-sm flex items-center mb-2">
                   <Phone className="w-5 h-5 text-legal-gold mr-3 shrink-0" />
                   <span>+39 328 6131479</span>
+                </p>
+                <p className="text-slate-500 text-sm flex items-center mb-2">
+                  <Phone className="w-5 h-5 text-legal-gold mr-3 shrink-0" />
+                  <span>+39 095 0950372 (Tel/Fax)</span>
                 </p>
                 <p className="text-slate-500 text-sm flex items-center">
                   <Mail className="w-5 h-5 text-legal-gold mr-3 shrink-0" />
