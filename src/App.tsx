@@ -603,9 +603,9 @@ const AttivitaPage = () => {
   );
 };
 
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID = 'service_ezsnftm';
+const EMAILJS_TEMPLATE_ID = 'template_wqqe7hz';
+const EMAILJS_PUBLIC_KEY = '_4rR7ESCRB64TSmTg';
 
 const ContattiPage = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
